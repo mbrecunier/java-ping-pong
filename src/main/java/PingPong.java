@@ -19,10 +19,12 @@ public class PingPong {
     ArrayList<Object> numbersArray = new ArrayList<Object>();
 
     for(Integer i = 1; i <= number; i ++) {
-      if(i % 3 == 0) {
-        numbersArray.add("ping");
+      if(i % 15 == 0) {
+        numbersArray.add("ping-pong");
       } else if (i % 5 == 0) {
         numbersArray.add("pong");
+      } else if (i % 3 == 0) {
+        numbersArray.add("ping");
       } else {
         numbersArray.add(i);
       }

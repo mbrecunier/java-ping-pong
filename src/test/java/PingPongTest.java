@@ -37,6 +37,29 @@ public class PingPongTest {
 
   }
 
+  @Test
+  public void countPingPong_willReplaceNumbersDivisiblebyFifteenWithPingPong() {
+    PingPong testPingPong = new PingPong();
+    ArrayList<Object> numbersArray = new ArrayList<Object>();
+    numbersArray.add(1);
+    numbersArray.add(2);
+    numbersArray.add("ping");
+    numbersArray.add(4);
+    numbersArray.add("pong");
+    numbersArray.add("ping");
+    numbersArray.add(7);
+    numbersArray.add(8);
+    numbersArray.add("ping");
+    numbersArray.add("pong");
+    numbersArray.add(11);
+    numbersArray.add("ping");
+    numbersArray.add(13);
+    numbersArray.add(14);
+    numbersArray.add("ping-pong");
+    assertEquals(numbersArray, testPingPong.countPingPong(15));
+
+  }
+
   // @Test
   // public void isPingPong_forNumberDivisibleByFifteen() {
   //   PingPong testPingPong = new PingPong();
