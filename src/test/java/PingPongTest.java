@@ -3,8 +3,6 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 
 public class PingPongTest {
-
-
   @Test
   public void countPingPong_willReturnAnArray() {
     PingPong testPingPong = new PingPong();
@@ -34,7 +32,6 @@ public class PingPongTest {
     numbersArray.add(4);
     numbersArray.add("pong");
     assertEquals(numbersArray, testPingPong.countPingPong(5));
-
   }
 
   @Test
@@ -57,12 +54,6 @@ public class PingPongTest {
     numbersArray.add(14);
     numbersArray.add("ping-pong");
     assertEquals(numbersArray, testPingPong.countPingPong(15));
-
   }
 
-  // @Test
-  // public void isPingPong_forNumberDivisibleByFifteen() {
-  //   PingPong testPingPong = new PingPong();
-  //   assertEquals()
-  // }
 }

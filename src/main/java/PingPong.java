@@ -7,15 +7,29 @@ import java.util.ArrayList;
 
 public class PingPong {
   public static void main(String[] args) {
-    // String layout = "templates/layout.vtl";
+    // staticFileLocation("/public");
+    String layout = "templates/layout.vtl";
 
-    // get("/", (request, response) -> {
-    //   Map<String, Object> model = new HashMap<String, Object>();
-    //   model.put("template", "templates/home.vtl");
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
+    get("/", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/home.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/detector", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/detector.vtl");
+      String userStringNumber = request.queryParams("userNumber");
+      Integer userNumber = Integer.parseInt(userStringNumber);
+      ArrayList<Object> results = new ArrayList<Object>();
+      results = PingPong.countPingPong(userNumber);
+
+      model.put("results", results);
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
-  public ArrayList countPingPong(Integer number) {
+
+  public static ArrayList countPingPong(Integer number) {
     ArrayList<Object> numbersArray = new ArrayList<Object>();
 
     for(Integer i = 1; i <= number; i ++) {
