@@ -21,6 +21,8 @@ public class PingPong {
     for(Integer i = 1; i <= number; i ++) {
       if(i % 3 == 0) {
         numbersArray.add("ping");
+      } else if (i % 5 == 0) {
+        numbersArray.add("pong");
       } else {
         numbersArray.add(i);
       }
